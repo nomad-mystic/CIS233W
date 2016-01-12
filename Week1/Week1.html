@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Hello Greg,
+    Project will only run in chrome and Windows Edge because there is a method I use for the canvas element.
+    This can be found on line 54 of CanvasMaker.js
+    Keith
+    -->
+    <meta charset="UTF-8">
+    <title>Canvas Circle Maker</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-4 inputHolder center-block">
+			<form>
+				<legend>Create a Circle Using HTML5 Canvas Element</legend>
+				<div class="form-group">
+					<div>
+                        <label for="radius">Radius</label>
+                        <input type="range"  name="radius" id="radius" min="0" max="150">
+                        <div id="radiusValueDiv" class="rangeDiv"></div>
+                    </div>
+                    <div>
+                        <label for="stroke">Stroke</label>
+                        <input type="range"  name="stroke" id="stroke" min="0" max="10">
+                        <div id="strokeValueDiv" class="rangeDiv"></div>
+                    </div>
+                    <div>
+                        <label for="strokeColor">Stroke Color Picker</label>
+                        <input type="color" id="strokeColor" name="strokeColor" value="#9368ec">
+                    </div>
+                    <div>
+                        <label for="fillColor">Fill Color Picker</label>
+                        <input type="color" id="fillColor" name="fillColor" value="#C1F549">
+                    </div>
+				</div>
+			</form>
+		</div><!--end Column-->
+        <div class="col-xs-12 col-sm-12 col-md-7 col-md-offset-1 canvasHolder">
+            <div id="canvasHolder">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div><!--end Column-->
+	</div><!--end row-->
+</div><!--end container-->
+<script src="js/CanvasMaker.js"></script>
+</body>
+</html>

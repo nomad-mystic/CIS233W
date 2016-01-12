@@ -1,0 +1,28 @@
+input[type="range"] {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+input[type="color"] {
+    float: left;
+    margin: 0 3% 0 0;
+}
+canvas {
+    margin: 5% auto;
+    display: block;
+}
+/*--range containers--*/
+form > div.form-group > div:nth-child(1),
+form > div.form-group > div:nth-child(2) {
+    margin-top: 5%;
+}
+.rangeDiv {
+    display: inline-block;
+}
+.canvasHolder {
+    height: 50vh;
+}
+.inputHolder {
+    height: 50vh;
+    margin: 2% auto;
+}
