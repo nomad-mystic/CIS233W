@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Week Two CIS233W Javascript for Developers II</title>
+    <script src="js/Vehicle.js"></script>
     <script>
-
-        var goButton = document.getElementById('goButton');
-        goButton.addEventListener('click', Instantiate);
+        function init() {
+            var goButton = document.getElementById('goButton');
+            console.log(goButton);
+            goButton.addEventListener('click', InstantiateObjects, false);
+        }
     </script>
 </head>
-<body>
+<body onload="init();">
+
+<form class="carsStuff">
 
 
+</form>
 
 <button id="goButton" type="button">GO!!!</button>
 

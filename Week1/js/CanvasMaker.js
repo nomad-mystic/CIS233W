@@ -4,6 +4,7 @@
 
 // loading up all of the eventListeners
 window.onload = init;
+
 function init() {
     var radiusSlider = document.getElementById('radius');
     var strokeSlider = document.getElementById('stroke');

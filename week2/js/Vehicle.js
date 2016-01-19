@@ -47,13 +47,26 @@ Vehicle.prototype.AddFuel = function(Gallons) {
 };
 
 SportsCar.prototype = new Vehicle();
+SportsCar.constructor = SportsCar;
 function SportsCar() {
 
+    this.TopSpeed = 100;
+    this.HorsePower = 700;
 }
 
-
-
+Truck.prototype = new Vehicle();
+Truck.constructor = Truck;
 function Truck() {
+
+    this.MaxPullWeight = true;
+    this.FourWhellDrive = true;
+}
+
+function InstantiateObjects() {
+
+    var parentClass = new Vehicle('Honda', 'Small', 1995, 'red', 'Compact');
+
+    console.log(parentClass.Honk());
 
 }
 
