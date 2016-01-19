@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <title>Week Two CIS233W Javascript for Developers II</title>
     <script src="js/Vehicle.js"></script>
-    <script>
-        function init() {
-            var goButton = document.getElementById('goButton');
-            console.log(goButton);
-            goButton.addEventListener('click', InstantiateObjects, false);
-        }
-    </script>
 </head>
-<body onload="init();">
+<body>
 
 <form class="carsStuff">
 
+    <select name="populate" id="populateSelect">
+        <option>SELECT AN EMPLOYEE</option>
+    </select>
 
+    <button id="populateButton" type="button">Populate Select Tag</button>
 </form>
 
 <button id="goButton" type="button">GO!!!</button>
