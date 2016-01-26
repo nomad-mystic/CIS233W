@@ -2,12 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Week 3 Date Machine</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        h1  {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        .container {
+            margin: 5% auto;
+        }
+        .row:first-child    {
+            background: #FD1A1A;
+            padding: 5% 0 20%;
+            border-radius: 10px;
+        }
+        #currentTime {
+            background: rgba(255, 255, 255, 0.52);
+            border-radius: 20px;
+            padding: 1em;
+            margin-bottom: 5%;
+        }
+        .row #addNumsButton {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+            <div id="currentTime"></div>
+		</div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+                <!--<div class="btn-group center-block">-->
+                    <button type="button" class="btn btn-default " id="addNumsButton">Add Numbers Button</button>
+                <!--</div>-->
+            </div>
+        </div>
+	</div>
+</div>
+<script>
+    var init = function() {
+        // Display Hour, Minute and Second)
+        var updateTime = function() {
+            var currentTime = document.getElementById('currentTime');
+            var date = new Date();
+            var localDate = date.toLocaleTimeString();
+            currentTime.innerHTML = '<h1>Local Time: ' + localDate + '</h1>';
 
+            setInterval(function() {
+                var currentTime = document.getElementById('currentTime');
+                var date = new Date();
+                var localDate = date.toLocaleTimeString();
+                currentTime.innerHTML = '<h1>Local Time: ' + localDate + '</h1>';
+            }, 1000);
+        };
+        updateTime();
 
+        // alerts() myCounter++ and uses closure to return the value
+        var doClick = function() {
+            var addNumbs = (function() {
+                var myCounter = 0;
+                return function() {
+                    myCounter += 1;
+                    return myCounter;
+                }
+            })();
 
-
+            var numberOne = addNumbs();
+            alert(numberOne);
+            var numberTwo = addNumbs();
+            alert(numberTwo);
+            var numberThree = addNumbs();
+            alert(numberThree);
+        };
+        var addNumsButton = document.getElementById('addNumsButton');
+        addNumsButton.addEventListener('click', doClick, false);
+    }; // End init
+    // Starting it all up
+    window.onload = init();
+</script>
 </body>
 </html>
