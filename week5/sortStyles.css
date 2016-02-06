@@ -1,0 +1,14 @@
+
+
+
+.container {
+    margin: 5% auto 0;
+}
+.btn {
+    display: block !important;
+    margin: 2%;
+    width: 100%;
+}
+#lessThen10 {
+    margin: 5% auto 0;
+}
