@@ -20,6 +20,7 @@
                                     <td>Company</td>
                                     <td>Price</td>
                                     <td>Year</td>
+                                    <td>Rating</td>
                                 </tr>
                                 <tbody>
                                     <xsl:for-each select="CATALOG/CD">
@@ -31,6 +32,7 @@
                                             <td><xsl:value-of select="COMPANY"/></td>
                                             <td><xsl:value-of select="PRICE"/></td>
                                             <td><xsl:value-of select="YEAR"/></td>
+                                            <td><xsl:value-of select="RATING"/></td>
                                         </tr>
                                     </xsl:for-each>
                                 </tbody>
@@ -45,7 +47,8 @@
                                 <input class="btn btn-info" type="submit" value="Company" id="company"/>
                                 <input class="btn btn-info" type="submit" value="Price" id="price"/>
                                 <input class="btn btn-info" type="submit" value="Year" id="year"/>
-                                <input class="btn btn-info" type="submit" value="Less Then 10" id="lessThen10"/>
+                                <input class="btn btn-info" type="submit" value="Rating" id="rating"/>
+                                <input class="btn btn-info" type="submit" value="Assignment" id="assignment"/>
                             </div>
                         </div>
                     </div>

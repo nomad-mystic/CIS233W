@@ -8,6 +8,7 @@
         <COMPANY>Columbia</COMPANY>
         <PRICE>10.90</PRICE>
         <YEAR>1985</YEAR>
+        <RATING>2</RATING>
     </CD>
     <CD>
         <TITLE>Hide your heart</TITLE>
@@ -16,6 +17,7 @@
         <COMPANY>CBS Records</COMPANY>
         <PRICE>9.90</PRICE>
         <YEAR>1988</YEAR>
+        <RATING>1</RATING>
     </CD>
     <CD>
         <TITLE>Greatest Hits</TITLE>
@@ -24,6 +26,7 @@
         <COMPANY>RCA</COMPANY>
         <PRICE>9.90</PRICE>
         <YEAR>1982</YEAR>
+        <RATING>3</RATING>
     </CD>
     <CD>
         <TITLE>Still got the blues</TITLE>
@@ -32,6 +35,7 @@
         <COMPANY>Virgin records</COMPANY>
         <PRICE>10.20</PRICE>
         <YEAR>1990</YEAR>
+        <RATING>5</RATING>
     </CD>
     <CD>
         <TITLE>Eros</TITLE>
@@ -40,6 +44,7 @@
         <COMPANY>BMG</COMPANY>
         <PRICE>9.90</PRICE>
         <YEAR>1997</YEAR>
+        <RATING>2</RATING>
     </CD>
     <CD>
         <TITLE>One night only</TITLE>
@@ -48,6 +53,7 @@
         <COMPANY>Polydor</COMPANY>
         <PRICE>10.90</PRICE>
         <YEAR>1998</YEAR>
+        <RATING>4</RATING>
     </CD>
     <CD>
         <TITLE>Sylvias Mother</TITLE>
@@ -56,6 +62,7 @@
         <COMPANY>CBS</COMPANY>
         <PRICE>8.10</PRICE>
         <YEAR>1973</YEAR>
+        <RATING>3</RATING>
     </CD>
     <CD>
         <TITLE>Maggie May</TITLE>
@@ -64,6 +71,7 @@
         <COMPANY>Pickwick</COMPANY>
         <PRICE>8.50</PRICE>
         <YEAR>1990</YEAR>
+        <RATING>2</RATING>
     </CD>
     <CD>
         <TITLE>Romanza</TITLE>
@@ -72,6 +80,7 @@
         <COMPANY>Polydor</COMPANY>
         <PRICE>10.80</PRICE>
         <YEAR>1996</YEAR>
+        <RATING>1</RATING>
     </CD>
     <CD>
         <TITLE>When a man loves a woman</TITLE>
@@ -80,6 +89,7 @@
         <COMPANY>Atlantic</COMPANY>
         <PRICE>8.70</PRICE>
         <YEAR>1987</YEAR>
+        <RATING>4</RATING>
     </CD>
     <CD>
         <TITLE>Black angel</TITLE>
@@ -88,6 +98,7 @@
         <COMPANY>Mega</COMPANY>
         <PRICE>10.90</PRICE>
         <YEAR>1995</YEAR>
+        <RATING>3</RATING>
     </CD>
     <CD>
         <TITLE>1999 Grammy Nominees</TITLE>
@@ -96,6 +107,7 @@
         <COMPANY>Grammy</COMPANY>
         <PRICE>10.20</PRICE>
         <YEAR>1999</YEAR>
+        <RATING>5</RATING>
     </CD>
     <CD>
         <TITLE>For the good times</TITLE>
@@ -104,6 +116,7 @@
         <COMPANY>Mucik Master</COMPANY>
         <PRICE>8.70</PRICE>
         <YEAR>1995</YEAR>
+        <RATING>2</RATING>
     </CD>
     <CD>
         <TITLE>Big Willie style</TITLE>
@@ -112,6 +125,7 @@
         <COMPANY>Columbia</COMPANY>
         <PRICE>9.90</PRICE>
         <YEAR>1997</YEAR>
+        <RATING>5</RATING>
     </CD>
     <CD>
         <TITLE>Tupelo Honey</TITLE>
@@ -120,6 +134,7 @@
         <COMPANY>Polydor</COMPANY>
         <PRICE>8.20</PRICE>
         <YEAR>1971</YEAR>
+        <RATING>2</RATING>
     </CD>
     <CD>
         <TITLE>Soulsville</TITLE>
@@ -128,6 +143,7 @@
         <COMPANY>WEA</COMPANY>
         <PRICE>7.90</PRICE>
         <YEAR>1996</YEAR>
+        <RATING>3</RATING>
     </CD>
     <CD>
         <TITLE>The very best of</TITLE>
@@ -136,6 +152,7 @@
         <COMPANY>Island</COMPANY>
         <PRICE>8.90</PRICE>
         <YEAR>1990</YEAR>
+        <RATING>5</RATING>
     </CD>
     <CD>
         <TITLE>Stop</TITLE>
@@ -144,6 +161,7 @@
         <COMPANY>A and M</COMPANY>
         <PRICE>8.90</PRICE>
         <YEAR>1988</YEAR>
+        <RATING>2</RATING>
     </CD>
     <CD>
         <TITLE>Bridge of Spies</TITLE>
@@ -152,6 +170,7 @@
         <COMPANY>Siren</COMPANY>
         <PRICE>7.90</PRICE>
         <YEAR>1987</YEAR>
+        <RATING>3</RATING>
     </CD>
     <CD>
         <TITLE>Private Dancer</TITLE>
@@ -160,6 +179,7 @@
         <COMPANY>Capitol</COMPANY>
         <PRICE>8.90</PRICE>
         <YEAR>1983</YEAR>
+        <RATING>1</RATING>
     </CD>
     <CD>
         <TITLE>Midt om natten</TITLE>
@@ -168,6 +188,7 @@
         <COMPANY>Medley</COMPANY>
         <PRICE>7.80</PRICE>
         <YEAR>1983</YEAR>
+        <RATING>2</RATING>
     </CD>
     <CD>
         <TITLE>Pavarotti Gala Concert</TITLE>
@@ -176,6 +197,7 @@
         <COMPANY>DECCA</COMPANY>
         <PRICE>9.90</PRICE>
         <YEAR>1991</YEAR>
+        <RATING>3</RATING>
     </CD>
     <CD>
         <TITLE>The dock of the bay</TITLE>
@@ -184,6 +206,7 @@
         <COMPANY>Atlantic</COMPANY>
         <PRICE>7.90</PRICE>
         <YEAR>1987</YEAR>
+        <RATING>5</RATING>
     </CD>
     <CD>
         <TITLE>Picture book</TITLE>
@@ -192,6 +215,7 @@
         <COMPANY>Elektra</COMPANY>
         <PRICE>7.20</PRICE>
         <YEAR>1985</YEAR>
+        <RATING>1</RATING>
     </CD>
     <CD>
         <TITLE>Red</TITLE>
@@ -200,6 +224,7 @@
         <COMPANY>London</COMPANY>
         <PRICE>7.80</PRICE>
         <YEAR>1987</YEAR>
+        <RATING>3</RATING>
     </CD>
     <CD>
         <TITLE>Unchain my heart</TITLE>
@@ -208,5 +233,6 @@
         <COMPANY>EMI</COMPANY>
         <PRICE>8.20</PRICE>
         <YEAR>1987</YEAR>
+        <RATING>5</RATING>
     </CD>
 </CATALOG>

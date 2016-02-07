@@ -25,7 +25,8 @@
                                 </tr>
                                 <tbody id="catalogBody">
                                     <xsl:for-each select="CATALOG/CD">
-                                        <xsl:sort select="RATING" id="sort" order="descending"/>
+                                        <xsl:sort select="RATING" id="sort" order="descending" data-type="text"/>
+                                        <xsl:if test="PRICE &gt; 10">
                                         <tr>
                                             <td><xsl:value-of select="ARTIST"/></td>
                                             <td><xsl:value-of select="TITLE"/></td>
@@ -35,6 +36,7 @@
                                             <td><xsl:value-of select="YEAR"/></td>
                                             <td><xsl:value-of select="RATING"/></td>
                                         </tr>
+                                        </xsl:if>
                                     </xsl:for-each>
                                 </tbody>
                             </table>
@@ -48,7 +50,8 @@
                                 <input class="btn btn-info" type="submit" value="Company" id="company"/>
                                 <input class="btn btn-info" type="submit" value="Price" id="price"/>
                                 <input class="btn btn-info" type="submit" value="Year" id="year"/>
-                                <input class="btn btn-info" type="submit" value="Less Then 10" id="lessThen10"/>
+                                <input class="btn btn-info" type="submit" value="Rating" id="rating"/>
+                                <input class="btn btn-info" type="submit" value="Assignment" id="assignment"/>
                             </div>
                         </div>
                     </div>

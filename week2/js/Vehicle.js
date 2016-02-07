@@ -127,7 +127,8 @@ function populate() {
 function getJSONData(){
     var text = {
         "employees" : [
-            { "firstName":"John" ,
+            {
+                "firstName":"John" ,
                 "lastName":"Doe"
             },
             {

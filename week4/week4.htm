@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 4 | CIS233W</title>
+    <script>
+        var updateDocument = function() {
+            // Grabbing mainDiv and the divs inside it
+            var mainDiv = document.getElementById('main');
+            var mainDivs = mainDiv.getElementsByTagName('div');
+
+            // Creating the paragraph and text node for appending to mainDivs
+            var newTextNode = document.createTextNode('My New Text Node');
+            var newTextNodePara = document.createElement('p');
+            newTextNodePara.id = 'newTextNodePara';
+            newTextNodePara.appendChild(newTextNode);
+            mainDivs[1].appendChild(newTextNodePara);
+            newTextNodePara.style.fontSize = '2em';
+            newTextNodePara.style.marginLeft = 'auto';
+            newTextNodePara.style.marginRight = 'auto';
+            newTextNodePara.style.width = '50%';
+
+            // Creating button inside 3rd div inside mainDiv
+            var newButton = document.createElement('button');
+            newButton.id = 'newButton';
+            newButton.innerHTML = 'CLICK ME';
+            mainDivs[2].appendChild(newButton);
+            newButton.addEventListener('click', function() {
+                alert('BtnOne Says Hello');
+            });
+
+            // Changing the background color of each mainDivs
+            for (var i=0; i < mainDivs.length; i++) {
+                mainDivs[i].style.cursor = 'pointer';
+                mainDivs[i].style.backgroundColor = 'rgba(0, 0, 255, 0.33)';
+                mainDivs[i].style.margin = '1em';
+                mainDivs[i].style.paddingTop = '1em';
+                mainDivs[i].style.paddingBottom = '1em';
+                mainDivs[i].style.paddingRight = '1em';
+                mainDivs[i].style.paddingLeft = '1em';
+                mainDivs[i].style.color = 'blue';
+
+                mainDivs[i].addEventListener('mouseover', function(evt) {
+                    if (evt.target.id !== 'newButton' && evt.target.id !== 'selectElement') {
+                        evt.target.style.color = 'yellow';
+                    }
+                });
+                mainDivs[i].addEventListener('mouseout', function(evt) {
+                    if (evt.target.id !== 'newButton' && evt.target.id !== 'selectElement') {
+                        evt.target.style.color = 'blue';
+                    }
+                });
+            } // End updateDocument()
+
+            // Creating the select element to append to 4th mainDiv
+            var callJSON = function() {
+                var request = new XMLHttpRequest();
+
+                request.onreadystatechange = function() {
+                    if (request.readyState == 4 && request.status == 200) {
+                        return request.responseText;
+                    }
+                };
+                request.open('GET', 'employees.htm', false);
+                request.send();
+                return request.responseText;
+            }; // End callJSON
+
+            var createPopSelect = function(callback) {
+                var selectElement = document.createElement('select');
+                selectElement.id = 'selectElement';
+                var options = document.createElement('option');
+                options.value = 'SELECT AN EMPLOYEE';
+                options.text = 'SELECT AN EMPLOYEE';
+                selectElement.add(options);
+
+                var parsedEmployees = JSON.parse(callback);
+                var selectOutput = '';
+
+                var mainDivs = mainDiv.getElementsByTagName('div');
+                mainDivs[3].appendChild(selectElement);
+
+                for (var i=0; i < parsedEmployees.employees.length; i++) {
+                    selectOutput += '<option value="' + parsedEmployees.employees[i].firstName + '">';
+                    selectOutput += parsedEmployees.employees[i].firstName;
+                    selectOutput += ' ' + parsedEmployees.employees[i].lastName + '</option>';
+                }
+                selectElement.innerHTML += selectOutput;
+            }; // End createPopSelect
+            createPopSelect(callJSON());
+        };
+    </script>
+</head>
+<body onload="updateDocument();">
+<div id="main">
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue risus blandit, placerat risus nec,
+        ullamcorper tortor. Vivamus euismod sed elit vel dapibus. Cras enim nisi, ultricies maximus tempus eu, molestie
+        in urna. Sed a volutpat justo, eu facilisis est. Quisque pharetra augue nisi, eu semper nisl convallis eu.
+        Aliquam ac auctor nunc, eu tempus orci. Fusce libero tellus, elementum quis interdum sed, suscipit in tellus.
+        Nulla eu nibh risus. Integer vestibulum imperdiet tincidunt. Cras tincidunt ut elit eu tempor. Mauris vehicula
+        eu mi varius congue. In hac habitasse platea dictumst. Aliquam fringilla erat vitae ligula dictum dictum. Nam
+        quis sapien vitae metus finibus ultricies vitae eget elit.</p>
+    </div>
+
+    <div>
+        <p>Maecenas tincidunt tortor sit amet scelerisque congue. Phasellus vitae condimentum nulla, vitae sagittis neque.
+        Vivamus efficitur fringilla vulputate. Etiam eu magna tincidunt, ultricies nisl non, rhoncus ipsum. Nulla at vestibulum
+        eros. Cras mattis semper scelerisque. Praesent sed tortor quis nisi gravida aliquet. Sed commodo est nunc, ac volutpat mi
+        rutrum dignissim. In vitae consectetur massa. Fusce convallis lectus eu tempus faucibus. Aliquam quis leo libero.
+        Nam eu dui at tortor vehicula gravida. Fusce nec justo accumsan, porttitor eros sed, imperdiet tellus. Fusce ornare urna
+        sit amet massa dignissim, a iaculis massa consequat. Nullam a ex ut arcu tristique viverra sit amet sit amet mauris.</p>
+    </div>
+
+    <div>
+        <p>Integer luctus odio eu libero lobortis, vitae rhoncus dolor semper. Sed auctor, purus vitae placerat egestas, lorem velit pellentesque augue, ac
+        venenatis nisl neque eu erat. Duis porttitor feugiat mi non commodo. Sed aliquam nisi vel nisi maximus hendrerit. Vestibulum ac magna fringilla,
+        fermentum lectus tristique, facilisis mauris. Suspendisse tincidunt tincidunt turpis, sed congue urna hendrerit id. Ut sed lobortis lectus.</p>
+    </div>
+
+    <div>
+        <p>Etiam leo justo, lacinia at ante ut, molestie vestibulum risus. Nunc augue dolor, cursus id erat vitae, lobortis volutpat mi. Sed quis velit enim. Duis sodales urna at
+        sollicitudin vestibulum. Curabitur rhoncus quis odio ut mollis. Aenean molestie posuere enim nec vulputate. Sed sed convallis nisi. Aliquam erat volutpat. Morbi vitae
+        efficitur augue. Nunc rutrum lobortis risus. Sed ac pharetra massa. Vivamus justo massa, varius ac nisi a, viverra volutpat magna. Sed luctus nibh eget felis pulvinar,
+        sed commodo turpis consectetur. Ut dapibus pharetra iaculis.</p>
+    </div>
+
+    <div>
+        <p>Curabitur eu nunc pretium, facilisis turpis sed, luctus quam. Proin erat dolor, dictum id semper vel, interdum non libero. Proin volutpat non tellus eu malesuada.
+        Mauris dictum purus suscipit odio tincidunt interdum quis a libero. Sed ultricies ut odio vel suscipit. Fusce arcu felis, euismod varius consectetur quis, luctus a eros.
+        Curabitur venenatis sapien id mi porta aliquam. Nullam viverra tempor velit non vehicula. Cras id odio non risus faucibus tincidunt eu ut justo. Vestibulum tellus velit,
+        elementum ac dui et, scelerisque sollicitudin metus. Duis vel massa venenatis, cursus dolor sed, suscipit nibh. Etiam viverra dui quis massa maximus, et consequat mauris pharetra.</p>
+    </div>
+</div>
+</body>
+</html>

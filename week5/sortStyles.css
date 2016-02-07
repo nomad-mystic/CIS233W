@@ -1,6 +1,7 @@
 
-
-
+tr {
+    cursor: pointer;
+}
 .container {
     margin: 5% auto 0;
 }
@@ -11,4 +12,8 @@
 }
 #lessThen10 {
     margin: 5% auto 0;
+}
+
+#info:hover{
+    background-color:#afd9ee
 }
