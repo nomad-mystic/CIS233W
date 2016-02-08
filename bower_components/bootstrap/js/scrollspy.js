@@ -107,7 +107,7 @@
     this.clear()
 
     var selector = this.selector +
-      '[data-target="' + target + '"],' +
+      '[week5-target="' + target + '"],' +
       this.selector + '[href="' + target + '"]'
 
     var active = $(selector)
@@ -162,8 +162,8 @@
   // SCROLLSPY DATA-API
   // ==================
 
-  $(window).on('load.bs.scrollspy.data-api', function () {
-    $('[data-spy="scroll"]').each(function () {
+  $(window).on('load.bs.scrollspy.week5-api', function () {
+    $('[week5-spy="scroll"]').each(function () {
       var $spy = $(this)
       Plugin.call($spy, $spy.data())
     })

@@ -3,12 +3,12 @@
         <html>
             <head>
                 <title>CD CATALOG</title>
-                <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-                <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
-                <script src="week5/sortFunctions.js" type="text/javascript"></script>
-                <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-                <link rel="stylesheet" type="text/css" href="bower_components/jquery-ui/themes/base/jquery-ui.min.css"/>
-                <link rel="stylesheet" type="text/css" href="week5/sortStyles.css"/>
+                <script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+                <script src="../bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+                <script src="sortFunctions.js" type="text/javascript"></script>
+                <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+                <link rel="stylesheet" type="text/css" href="../bower_components/jquery-ui/themes/base/jquery-ui.min.css"/>
+                <link rel="stylesheet" type="text/css" href="sortStyles.css"/>
             </head>
             <body>
                 <section class="container">
@@ -27,8 +27,7 @@
                                     </tr>
                                     <tbody>
                                         <xsl:for-each select="CATALOG/CD">
-                                            <xsl:sort select="RATING" id="sort" order="descending" data-type="text"/>
-                                            <xsl:if test="PRICE &gt; 10">
+                                            <xsl:sort select="ARTIST" id="sort"/>
                                             <tr>
                                                 <td><xsl:value-of select="ARTIST"/></td>
                                                 <td><xsl:value-of select="TITLE"/></td>
@@ -38,13 +37,12 @@
                                                 <td><xsl:value-of select="YEAR"/></td>
                                                 <td><xsl:value-of select="RATING"/></td>
                                             </tr>
-                                            </xsl:if>
                                         </xsl:for-each>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-md-3 col-lg-2 col-lg-offset-0 col-md-offset-1 col-sm-offset-1 menu">
+                        <div class="col-sm-3 col-md-3 col-lg-2 col-lg-offset-0 col-md-offset-1 col-sm-offset-1 " style="background: #999; height: 100%;">
                             <div class="center-block">
                                 <h1 class="text-center">Sort by</h1>
                                 <input class="btn btn-info" type="submit" value="Artist" id="artist"/>

@@ -1,0 +1,40 @@
+
+.table {
+    margin-bottom: 0;
+}
+tr {
+    cursor: move;
+}
+tr:nth-child(1) {
+    cursor: default;
+}
+.container {
+    margin: 5% auto 0;
+}
+.btn {
+    display: block !important;
+    margin: 2%;
+    width: 100%;
+}
+.menu {
+    height: auto;
+    background: #999;
+    padding-bottom: 2%;
+    border-radius: 2px;
+}
+#lessThen10 {
+    margin: 5% auto 0;
+}
+
+#info:hover {
+    background-color:#afd9ee
+}
+#success {
+    background-color:#dff0d8
+}
+.success {
+    background-color:#dff0d8
+}
+#active {
+    background-color:#d4d4d4
+}

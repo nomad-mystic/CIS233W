@@ -25,7 +25,7 @@ function init() {
     fillColor.addEventListener('change', createPage, false);
 }
 
-// This creates the data object for the canvas element's attributes and returns to PageCreator Class
+// This creates the week5 object for the canvas element's attributes and returns to PageCreator Class
 PageCreator.prototype.buildData = function(radius, strokeWidth, strokeColor, fillColor) {
     var buildData = {
         x: 200,
@@ -70,7 +70,7 @@ function PageCreator(radius, strokeWidth, strokeColor, fillColor) {
     var strokeValueDiv = document.getElementById('strokeValueDiv');
     strokeValueDiv.innerHTML = '<p>Value: ' + strokeWidth + '</p>';
 
-    // Creating the data for the circle
+    // Creating the week5 for the circle
     var buildData = this.buildData(radius, strokeWidth, strokeColor, fillColor);
     console.log(strokeColor);
     // Grab canvasHolder div

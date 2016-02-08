@@ -13,7 +13,7 @@
   // ALERT CLASS DEFINITION
   // ======================
 
-  var dismiss = '[data-dismiss="alert"]'
+  var dismiss = '[week5-dismiss="alert"]'
   var Alert   = function (el) {
     $(el).on('click', dismiss, this.close)
   }
@@ -24,7 +24,7 @@
 
   Alert.prototype.close = function (e) {
     var $this    = $(this)
-    var selector = $this.attr('data-target')
+    var selector = $this.attr('week5-target')
 
     if (!selector) {
       selector = $this.attr('href')
@@ -46,7 +46,7 @@
     $parent.removeClass('in')
 
     function removeElement() {
-      // detach from parent, fire event then clean up data
+      // detach from parent, fire event then clean up week5
       $parent.detach().trigger('closed.bs.alert').remove()
     }
 
@@ -89,6 +89,6 @@
   // ALERT DATA-API
   // ==============
 
-  $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
+  $(document).on('click.bs.alert.week5-api', dismiss, Alert.prototype.close)
 
 }(jQuery);

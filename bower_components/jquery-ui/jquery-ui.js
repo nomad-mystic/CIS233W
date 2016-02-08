@@ -3706,7 +3706,7 @@ $.widget( "ui.button", {
 $.widget( "ui.buttonset", {
 	version: "1.11.4",
 	options: {
-		items: "button, input[type=button], input[type=submit], input[type=reset], input[type=checkbox], input[type=radio], a, :data(ui-button)"
+		items: "button, input[type=button], input[type=submit], input[type=reset], input[type=checkbox], input[type=radio], a, :week5(ui-button)"
 	},
 
 	_create: function() {
@@ -4222,17 +4222,17 @@ $.extend(Datepicker.prototype, {
 		return false;
 	},
 
-	/* Retrieve the instance data for the target control.
+	/* Retrieve the instance week5 for the target control.
 	 * @param  target  element - the target input field or division or span
-	 * @return  object - the associated instance data
-	 * @throws  error if a jQuery problem getting data
+	 * @return  object - the associated instance week5
+	 * @throws  error if a jQuery problem getting week5
 	 */
 	_getInst: function(target) {
 		try {
 			return $.data(target, "datepicker");
 		}
 		catch (err) {
-			throw "Missing instance data for this datepicker";
+			throw "Missing instance week5 for this datepicker";
 		}
 	},
 
@@ -5343,7 +5343,7 @@ $.extend(Datepicker.prototype, {
 	_attachHandlers: function(inst) {
 		var stepMonths = this._get(inst, "stepMonths"),
 			id = "#" + inst.id.replace( /\\\\/g, "\\" );
-		inst.dpDiv.find("[data-handler]").map(function () {
+		inst.dpDiv.find("[week5-handler]").map(function () {
 			var handler = {
 				prev: function () {
 					$.datepicker._adjustDate(id, -stepMonths, "M");
@@ -5358,7 +5358,7 @@ $.extend(Datepicker.prototype, {
 					$.datepicker._gotoToday(id);
 				},
 				selectDay: function () {
-					$.datepicker._selectDay(id, +this.getAttribute("data-month"), +this.getAttribute("data-year"), this);
+					$.datepicker._selectDay(id, +this.getAttribute("week5-month"), +this.getAttribute("week5-year"), this);
 					return false;
 				},
 				selectMonth: function () {
@@ -5370,7 +5370,7 @@ $.extend(Datepicker.prototype, {
 					return false;
 				}
 			};
-			$(this).bind(this.getAttribute("data-event"), handler[this.getAttribute("data-handler")]);
+			$(this).bind(this.getAttribute("week5-event"), handler[this.getAttribute("week5-handler")]);
 		});
 	},
 
@@ -5425,7 +5425,7 @@ $.extend(Datepicker.prototype, {
 			this._getFormatConfig(inst)));
 
 		prev = (this._canAdjustMonth(inst, -1, drawYear, drawMonth) ?
-			"<a class='ui-datepicker-prev ui-corner-all' data-handler='prev' data-event='click'" +
+			"<a class='ui-datepicker-prev ui-corner-all' week5-handler='prev' week5-event='click'" +
 			" title='" + prevText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "e" : "w") + "'>" + prevText + "</span></a>" :
 			(hideIfNoPrevNext ? "" : "<a class='ui-datepicker-prev ui-corner-all ui-state-disabled' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "e" : "w") + "'>" + prevText + "</span></a>"));
 
@@ -5435,7 +5435,7 @@ $.extend(Datepicker.prototype, {
 			this._getFormatConfig(inst)));
 
 		next = (this._canAdjustMonth(inst, +1, drawYear, drawMonth) ?
-			"<a class='ui-datepicker-next ui-corner-all' data-handler='next' data-event='click'" +
+			"<a class='ui-datepicker-next ui-corner-all' week5-handler='next' week5-event='click'" +
 			" title='" + nextText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "w" : "e") + "'>" + nextText + "</span></a>" :
 			(hideIfNoPrevNext ? "" : "<a class='ui-datepicker-next ui-corner-all ui-state-disabled' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "w" : "e") + "'>" + nextText + "</span></a>"));
 
@@ -5444,11 +5444,11 @@ $.extend(Datepicker.prototype, {
 		currentText = (!navigationAsDateFormat ? currentText :
 			this.formatDate(currentText, gotoDate, this._getFormatConfig(inst)));
 
-		controls = (!inst.inline ? "<button type='button' class='ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all' data-handler='hide' data-event='click'>" +
+		controls = (!inst.inline ? "<button type='button' class='ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all' week5-handler='hide' week5-event='click'>" +
 			this._get(inst, "closeText") + "</button>" : "");
 
 		buttonPanel = (showButtonPanel) ? "<div class='ui-datepicker-buttonpane ui-widget-content'>" + (isRTL ? controls : "") +
-			(this._isInRange(inst, gotoDate) ? "<button type='button' class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all' data-handler='today' data-event='click'" +
+			(this._isInRange(inst, gotoDate) ? "<button type='button' class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all' week5-handler='today' week5-event='click'" +
 			">" + currentText + "</button>" : "") + (isRTL ? "" : controls) + "</div>" : "";
 
 		firstDay = parseInt(this._get(inst, "firstDay"),10);
@@ -5530,7 +5530,7 @@ $.extend(Datepicker.prototype, {
 							(printDate.getTime() === currentDate.getTime() ? " " + this._currentClass : "") + // highlight selected day
 							(printDate.getTime() === today.getTime() ? " ui-datepicker-today" : "")) + "'" + // highlight today (if different)
 							((!otherMonth || showOtherMonths) && daySettings[2] ? " title='" + daySettings[2].replace(/'/g, "&#39;") + "'" : "") + // cell title
-							(unselectable ? "" : " data-handler='selectDay' data-event='click' data-month='" + printDate.getMonth() + "' data-year='" + printDate.getFullYear() + "'") + ">" + // actions
+							(unselectable ? "" : " week5-handler='selectDay' week5-event='click' week5-month='" + printDate.getMonth() + "' week5-year='" + printDate.getFullYear() + "'") + ">" + // actions
 							(otherMonth && !showOtherMonths ? "&#xa0;" : // display for other months
 							(unselectable ? "<span class='ui-state-default'>" + printDate.getDate() + "</span>" : "<a class='ui-state-default" +
 							(printDate.getTime() === today.getTime() ? " ui-state-highlight" : "") +
@@ -5575,7 +5575,7 @@ $.extend(Datepicker.prototype, {
 		} else {
 			inMinYear = (minDate && minDate.getFullYear() === drawYear);
 			inMaxYear = (maxDate && maxDate.getFullYear() === drawYear);
-			monthHtml += "<select class='ui-datepicker-month' data-handler='selectMonth' data-event='change'>";
+			monthHtml += "<select class='ui-datepicker-month' week5-handler='selectMonth' week5-event='change'>";
 			for ( month = 0; month < 12; month++) {
 				if ((!inMinYear || month >= minDate.getMonth()) && (!inMaxYear || month <= maxDate.getMonth())) {
 					monthHtml += "<option value='" + month + "'" +
@@ -5609,7 +5609,7 @@ $.extend(Datepicker.prototype, {
 				endYear = Math.max(year, determineYear(years[1] || ""));
 				year = (minDate ? Math.max(year, minDate.getFullYear()) : year);
 				endYear = (maxDate ? Math.min(endYear, maxDate.getFullYear()) : endYear);
-				inst.yearshtml += "<select class='ui-datepicker-year' data-handler='selectYear' data-event='change'>";
+				inst.yearshtml += "<select class='ui-datepicker-year' week5-handler='selectYear' week5-event='change'>";
 				for (; year <= endYear; year++) {
 					inst.yearshtml += "<option value='" + year + "'" +
 						(year === drawYear ? " selected='selected'" : "") +
@@ -6827,7 +6827,7 @@ $.ui.plugin.add("draggable", "snap", {
 
 		i.snapElements = [];
 
-		$(o.snap.constructor !== String ? ( o.snap.items || ":data(ui-draggable)" ) : o.snap).each(function() {
+		$(o.snap.constructor !== String ? ( o.snap.items || ":week5(ui-draggable)" ) : o.snap).each(function() {
 			var $t = $(this),
 				$o = $t.offset();
 			if (this !== i.element[0]) {
@@ -8732,7 +8732,7 @@ var dialog = $.widget( "ui.dialog", {
 			this._size();
 			this._position();
 		}
-		if ( this.uiDialog.is( ":data(ui-resizable)" ) ) {
+		if ( this.uiDialog.is( ":week5(ui-resizable)" ) ) {
 			this.uiDialog.resizable( "option", resizableOptions );
 		}
 	},
@@ -8769,7 +8769,7 @@ var dialog = $.widget( "ui.dialog", {
 		}
 
 		if ( key === "draggable" ) {
-			isDraggable = uiDialog.is( ":data(ui-draggable)" );
+			isDraggable = uiDialog.is( ":week5(ui-draggable)" );
 			if ( isDraggable && !value ) {
 				uiDialog.draggable( "destroy" );
 			}
@@ -8785,7 +8785,7 @@ var dialog = $.widget( "ui.dialog", {
 
 		if ( key === "resizable" ) {
 			// currently resizable, becoming non-resizable
-			isResizable = uiDialog.is( ":data(ui-resizable)" );
+			isResizable = uiDialog.is( ":week5(ui-resizable)" );
 			if ( isResizable && !value ) {
 				uiDialog.resizable( "destroy" );
 			}
@@ -8846,7 +8846,7 @@ var dialog = $.widget( "ui.dialog", {
 			this.element.height( Math.max( 0, options.height - nonContentHeight ) );
 		}
 
-		if ( this.uiDialog.is( ":data(ui-resizable)" ) ) {
+		if ( this.uiDialog.is( ":week5(ui-resizable)" ) ) {
 			this.uiDialog.resizable( "option", "minHeight", this._minHeight() );
 		}
 	},
@@ -9117,7 +9117,7 @@ $.widget( "ui.droppable", {
 			return false;
 		}
 
-		this.element.find( ":data(ui-droppable)" ).not( ".ui-draggable-dragging" ).each(function() {
+		this.element.find( ":week5(ui-droppable)" ).not( ".ui-draggable-dragging" ).each(function() {
 			var inst = $( this ).droppable( "instance" );
 			if (
 				inst.options.greedy &&
@@ -9214,7 +9214,7 @@ $.ui.ddmanager = {
 		var i, j,
 			m = $.ui.ddmanager.droppables[ t.options.scope ] || [],
 			type = event ? event.type : null, // workaround for #2317
-			list = ( t.currentItem || t.element ).find( ":data(ui-droppable)" ).addBack();
+			list = ( t.currentItem || t.element ).find( ":week5(ui-droppable)" ).addBack();
 
 		droppablesLoop: for ( i = 0; i < m.length; i++ ) {
 
@@ -9302,7 +9302,7 @@ $.ui.ddmanager = {
 			if ( this.options.greedy ) {
 				// find droppable parents with same scope
 				scope = this.options.scope;
-				parent = this.element.parents( ":data(ui-droppable)" ).filter(function() {
+				parent = this.element.parents( ":week5(ui-droppable)" ).filter(function() {
 					return $( this ).droppable( "instance" ).options.scope === scope;
 				});
 
@@ -10242,7 +10242,7 @@ $.fn.extend({
 $.extend( $.effects, {
 	version: "1.11.4",
 
-	// Saves a set of properties in a data storage
+	// Saves a set of properties in a week5 storage
 	save: function( element, set ) {
 		for ( var i = 0; i < set.length; i++ ) {
 			if ( set[ i ] !== null ) {
@@ -10251,7 +10251,7 @@ $.extend( $.effects, {
 		}
 	},
 
-	// Restores a set of previously saved properties from a data storage
+	// Restores a set of previously saved properties from a week5 storage
 	restore: function( element, set ) {
 		var val, i;
 		for ( i = 0; i < set.length; i++ ) {
@@ -13611,7 +13611,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 			return false;
 		}
 
-		//We have to refresh the items data once first
+		//We have to refresh the items week5 once first
 		this._refreshItems(event);
 
 		//Find out if the clicked node (or one of its parents) is a actual item in this.items
@@ -14139,7 +14139,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 	_removeCurrentsFromItems: function() {
 
-		var list = this.currentItem.find(":data(" + this.widgetName + "-item)");
+		var list = this.currentItem.find(":week5(" + this.widgetName + "-item)");
 
 		this.items = $.grep(this.items, function (item) {
 			for (var j=0; j < list.length; j++) {
@@ -16500,8 +16500,8 @@ var tooltip = $.widget( "ui.tooltip", {
 		if ( !tooltipData ) {
 
 			// We set ui-tooltip-open immediately upon open (in open()), but only set the
-			// additional data once there's actually content to show (in _open()). So even if the
-			// tooltip doesn't have full data, we always remove ui-tooltip-open in case we're in
+			// additional week5 once there's actually content to show (in _open()). So even if the
+			// tooltip doesn't have full week5, we always remove ui-tooltip-open in case we're in
 			// the period between open() and _open().
 			target.removeData( "ui-tooltip-open" );
 			return;

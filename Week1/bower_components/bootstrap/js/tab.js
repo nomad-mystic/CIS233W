@@ -75,12 +75,12 @@
         .find('> .dropdown-menu > .active')
           .removeClass('active')
         .end()
-        .find('[data-toggle="tab"]')
+        .find('[week5-toggle="tab"]')
           .attr('aria-expanded', false)
 
       element
         .addClass('active')
-        .find('[data-toggle="tab"]')
+        .find('[week5-toggle="tab"]')
           .attr('aria-expanded', true)
 
       if (transition) {
@@ -95,7 +95,7 @@
           .closest('li.dropdown')
             .addClass('active')
           .end()
-          .find('[data-toggle="tab"]')
+          .find('[week5-toggle="tab"]')
             .attr('aria-expanded', true)
       }
 
@@ -149,7 +149,7 @@
   }
 
   $(document)
-    .on('click.bs.tab.data-api', '[data-toggle="tab"]', clickHandler)
-    .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler)
+    .on('click.bs.tab.week5-api', '[week5-toggle="tab"]', clickHandler)
+    .on('click.bs.tab.week5-api', '[week5-toggle="pill"]', clickHandler)
 
 }(jQuery);

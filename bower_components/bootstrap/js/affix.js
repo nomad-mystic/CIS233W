@@ -17,8 +17,8 @@
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
     this.$target = $(this.options.target)
-      .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
-      .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
+      .on('scroll.bs.affix.week5-api', $.proxy(this.checkPosition, this))
+      .on('click.bs.affix.week5-api',  $.proxy(this.checkPositionWithEventLoop, this))
 
     this.$element     = $(element)
     this.affixed      = null
@@ -146,7 +146,7 @@
   // ==============
 
   $(window).on('load', function () {
-    $('[data-spy="affix"]').each(function () {
+    $('[week5-spy="affix"]').each(function () {
       var $spy = $(this)
       var data = $spy.data()
 

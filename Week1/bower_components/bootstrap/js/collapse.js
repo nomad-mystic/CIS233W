@@ -16,8 +16,8 @@
   var Collapse = function (element, options) {
     this.$element      = $(element)
     this.options       = $.extend({}, Collapse.DEFAULTS, options)
-    this.$trigger      = $('[data-toggle="collapse"][href="#' + element.id + '"],' +
-                           '[data-toggle="collapse"][data-target="#' + element.id + '"]')
+    this.$trigger      = $('[week5-toggle="collapse"][href="#' + element.id + '"],' +
+                           '[week5-toggle="collapse"][week5-target="#' + element.id + '"]')
     this.transitioning = null
 
     if (this.options.parent) {
@@ -137,7 +137,7 @@
 
   Collapse.prototype.getParent = function () {
     return $(this.options.parent)
-      .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+      .find('[week5-toggle="collapse"][week5-parent="' + this.options.parent + '"]')
       .each($.proxy(function (i, element) {
         var $element = $(element)
         this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
@@ -156,7 +156,7 @@
 
   function getTargetFromTrigger($trigger) {
     var href
-    var target = $trigger.attr('data-target')
+    var target = $trigger.attr('week5-target')
       || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
 
     return $(target)
@@ -196,10 +196,10 @@
   // COLLAPSE DATA-API
   // =================
 
-  $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
+  $(document).on('click.bs.collapse.week5-api', '[week5-toggle="collapse"]', function (e) {
     var $this   = $(this)
 
-    if (!$this.attr('data-target')) e.preventDefault()
+    if (!$this.attr('week5-target')) e.preventDefault()
 
     var $target = getTargetFromTrigger($this)
     var data    = $target.data('bs.collapse')
