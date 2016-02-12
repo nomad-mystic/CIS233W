@@ -16,10 +16,11 @@ $(document).ready(function() {
         },
         deactivate: function() {
             hoverEffect();
-            console.log('Deactivate');
         }
     });
 
+    var pathname = window.location.pathname;
+    var location = window.location;
     // This changes the pathname to match the XSLT file for each sort
     $('#artist').on('click', function() {
         window.location.replace('sortArtist.xml');
@@ -37,17 +38,23 @@ $(document).ready(function() {
         window.location.replace('sortPrice.xml');
     });
     $('#year').on('click', function() {
-        window.location.replace('sortYear.xml');
+        if (pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('sortYear.xml');
+        } else if (pathname === '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('week5/sortYear.xml');
+        }
     });
     $('#rating').on('click', function() {
-        if (window.location.pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
-            window.location.replace('sortRating.xml');
-        } else {
-            window.location.replace('week5/sortRating.xml');
+        if (pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('sortRating.xml');
+        } else if (pathname === '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('week5/sortRating.xml');
         }
     });
     $('#assignment').on('click', function() {
-        window.location.replace('CDCatalog.xml');
+        if (pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location = '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml';
+        }
     });
 
     // Hover Effect to the Table Roms
