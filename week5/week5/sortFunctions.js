@@ -23,19 +23,39 @@ $(document).ready(function() {
     var location = window.location;
     // This changes the pathname to match the XSLT file for each sort
     $('#artist').on('click', function() {
-        window.location.replace('sortArtist.xml');
+        if (pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('sortArtist.xml');
+        } else if (pathname === '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('sortArtist.xml');
+        }
     });
     $('#title').on('click', function() {
-        window.location.replace('sortTitle.xml');
+        if (pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('sortTitle.xml');
+        } else if (pathname === '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('week5/sortTitle.xml');
+        }
     });
     $('#country').on('click', function() {
-        window.location.replace('sortCountry.xml');
+        if (pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('sortCountry.xml');
+        } else if (pathname === '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('week5/sortCountry.xml');
+        }
     });
     $('#company').on('click', function() {
-        window.location.replace('sortCompany.xml');
+        if (pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('sortCompany.xml');
+        } else if (pathname === '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('week5/sortCompany.xml');
+        }
     });
     $('#price').on('click', function() {
-        window.location.replace('sortPrice.xml');
+        if (pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('sortPrice.xml');
+        } else if (pathname === '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
+            location.replace('week5/sortPrice.xml');
+        }
     });
     $('#year').on('click', function() {
         if (pathname != '/student/CIS233W_gregory.jackson_17449/keithmurphy37/CDCatalog.xml') {
