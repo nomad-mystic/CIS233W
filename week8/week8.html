@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Box App</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
+</head>
+<body>
+<div data-ng-app="myApp" data-ng-controller="myController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <label for="color">Please Choose a Color:</label>
+                <input data-ng-model="color" type="color" id="color">
+                <div class="colorBox center-block" style="background-color:{{ color }};"></div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <label for="salary">Salary</label>
+                <br>
+                <input type="number" id="salary" data-ng-model="salary" min="0">
+                <br>
+                <label for="pcgt">Percent of Raise</label>
+                <br>
+                <input type="number" id="pcgt" data-ng-model="pcgt" ng-change="change()" min="0">
+                <h4 data-ng-model="raise">This is you salary after raise: {{ raise | currency }}</h4>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            </div>
+        </div>
+    </div>
+</div><!--end myApp-->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
