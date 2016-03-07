@@ -13,5 +13,8 @@ app.controller('myController', function($scope) {
 
     $scope.change = function() {
         $scope.raise = ($scope.salary * ($scope.pcgt) / 100) + $scope.salary;
-    }
+    };
+
+    $scope.cars = ['Toyota','Honda','Kia','Chevrolet','Ford'];
+
 });

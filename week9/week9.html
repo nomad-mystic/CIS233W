@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Week 9</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-ng-app="myApp">
+    <section data-ng-controller="myController">
+        <h1>Movies of Brad Pitt</h1>
+        <form>
+            <label for="sortBy">Search by Title
+                <input type="text" id="sortBy" data-ng-model="typeName">
+                <span class="glyphicon glyphicon-zoom-in"></span>
+            </label>
+        </form>
+        <main class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td data-ng-click="sortBy('title')">Movie Title</td>
+                    <td data-ng-click="sortBy('release_date')">Release Date</td>
+                    <td data-ng-click="sortBy('character')">Character</td>
+                    <td data-ng-click="sortBy('original_title')">Original Title</td>
+                    <td data-ng-click="sortBy('id')">Id</td>
+                    <td data-ng-click="sortBy('credit_id')">Credit Id</td>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr data-ng-repeat="x in movies | orderBy: sorted | filter: typeName">
+                        <td data-ng-if="$odd" class="active">{{ x.title }}</td>
+                        <td data-ng-if="$even">{{ x.title }}</td>
+                        <td data-ng-if="$odd" class="active">{{ x.release_date }}</td>
+                        <td data-ng-if="$even">{{ x.release_date }}</td>
+                        <td data-ng-if="$odd" class="active">{{ x.character }}</td>
+                        <td data-ng-if="$even">{{ x.character }}</td>
+                        <td data-ng-if="$odd" class="active">{{ x.original_title}}</td>
+                        <td data-ng-if="$even">{{ x.original_title}}</td>
+                        <td data-ng-if="$odd" class="active">{{ x.id }}</td>
+                        <td data-ng-if="$even">{{ x.id }}</td>
+                        <td data-ng-if="$odd" class="active">{{ x.credit_id}}</td>
+                        <td data-ng-if="$even">{{ x.credit_id}}</td>
+                    </tr>
+                </tbody>
+                <tfooter>
+                <tr>
+                <td>All Data from <a href="https://www.themoviedb.org" target="_blank">The Movie Database</a></td>
+                </tr>
+                </tfooter>
+            </table>
+        </main>
+    </section>
+
+</body>
+</html>

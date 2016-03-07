@@ -6,28 +6,43 @@
     <script src="../bower_components/angular/angular.js"></script>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
 </head>
 <body>
-<div data-ng-app="myApp" data-ng-controller="myController">
+<div data-ng-app="myApp" data-ng-controller="myController" class="wrapper">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-3  col-md-3 col-lg-3 text-center">
                 <label for="color">Please Choose a Color:</label>
                 <input data-ng-model="color" type="color" id="color">
                 <div class="colorBox center-block" style="background-color:{{ color }};"></div>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-center">
                 <label for="salary">Salary</label>
                 <br>
-                <input type="number" id="salary" data-ng-model="salary" min="0">
+                <input type="number" id="salary" data-ng-model="salary" min="0" class="center-block">
                 <br>
-                <label for="pcgt">Percent of Raise</label>
+                <label for="pcgt" class="text-center">Percent of Raise</label>
                 <br>
-                <input type="number" id="pcgt" data-ng-model="pcgt" ng-change="change()" min="0">
+                <input type="number" id="pcgt" data-ng-model="pcgt" data-ng-change="change()" min="0" class="center-block">
                 <h4 data-ng-model="raise">This is you salary after raise: {{ raise | currency }}</h4>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <ul>
+                    <li data-ng-repeat="index in cars">
+                        {{ index }}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <form name="emailForm">
+                    <label for="email">Email</label>
+                    <input name="email" type="email" id="email" placeholder="Please Enter Your Email..." data-ng-model="email" required>
+                    <p>The Email You Entered: {{ email }}</p>
+                    <div role="alert">
+                        <p data-ng-show="emailForm.input.$error.email">Not a Valid Email!!</p>
+                    </div>
+                    <p>Is this Email Valid: {{emailForm.$valid}}</p>
+                </form>
             </div>
         </div>
     </div>

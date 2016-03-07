@@ -1,0 +1,9 @@
+
+
+table thead td {
+    cursor: pointer;
+}
+
+table thead td:hover {
+    background: #59b4d4;
+}
